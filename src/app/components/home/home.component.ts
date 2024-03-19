@@ -19,7 +19,7 @@ import { GithubService } from '../../services/github.service';
   imports: [
     ProjectComponent,
     LazyLoadImageModule, CommonModule, ReactiveFormsModule,
-    FilterPipe, MarkdownModule, RouterModule
+    FilterPipe, MarkdownModule, RouterModule, LazyLoadImageModule
   ],
   providers: [],
   templateUrl: './home.component.html',
@@ -38,6 +38,7 @@ export class HomeComponent {
   readMeData: GitHubReadMe
   searchForm: FormGroup
   searchText = ""
+  defaultImage: string = '../../../assets/images/loader.gif'
 
   constructor(private _projectService: ProjectService, private cdr: ChangeDetectorRef, private _fb: FormBuilder, private _githubService: GithubService) {
     this._projectService.getProjects().pipe(
