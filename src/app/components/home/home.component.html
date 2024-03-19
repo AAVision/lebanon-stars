@@ -1,19 +1,18 @@
-
-
 <div class="bgg">
-  
 
-    <div class="pb-6 flex md:flex md:flex-grow flex-row">
-      <form [formGroup]="searchForm" class="w-full md:w-2/12">
-        <label class="input input-bordered flex items-center">
-          <input type="text" class="grow" placeholder="Search" formControlName="search" />
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" /></svg>
-        </label>
-      </form>
-      
+  <div class="pb-6 flex md:flex md:flex-grow flex-row">
+    <form [formGroup]="searchForm" class="w-full md:w-2/12">
+      <label class="input input-bordered flex items-center">
+        <input type="text" class="grow" placeholder="Search" formControlName="search" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
+          <path fill-rule="evenodd"
+            d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+            clip-rule="evenodd" />
+        </svg>
+      </label>
+    </form>
 
-
-      <!-- <div class="join">
+    <!-- <div class="join">
         <div>
           <div>
             <input class="input input-bordered join-item" placeholder="Search"/>
@@ -31,77 +30,79 @@
         </div>
       </div> -->
 
-    </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-4 sm:grid-cols-2 z-50">
-          @for(project of projects | filter:searchText; track project.id){
-              <app-project [metadata]="project" (info)="receiveInfo($event)"></app-project>
-          }@empty {
-            <div class="flex items-center justify-center">
-              <img src="../../../assets/images/no-data.jpg" alt="" class="text-center rounded-xl transform-gpu hover:scale-y-105 transition duration-500 ">
-            </div>
-          }
-      </div>
   </div>
 
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-4 sm:grid-cols-2 z-50">
+    @for(project of projects | filter:searchText; track project.id){
+    <app-project [metadata]="project" (info)="receiveInfo($event)"></app-project>
+    }@empty {
+    <div class="flex items-center justify-center">
+      <img src="../../../assets/images/no-data.jpg" alt=""
+        class="text-center rounded-xl transform-gpu hover:scale-y-105 transition duration-500 ">
+    </div>
+    }
+  </div>
+</div>
 
 <dialog id="my_modal_4" class="modal" #dataBlock>
-  
-    <div class="modal-box w-11/12 max-w-5xl">
-      @if(isLoading){
-        <div class="flex flex-col gap-4 w-full">
-          <div class="skeleton h-32 w-full"></div>
-          <div class="skeleton h-4 w-28"></div>
-          <div class="skeleton h-4 w-full"></div>
-          <div class="skeleton h-4 w-full"></div>
-        </div>
-      }
-      @else {
 
-        <div class="bg-gray-600 bg-blend-multiply border-2 rounded-lg" 
-        style="background-image: url({{githubData?.owner.avatar_url}});
+  <div class="modal-box w-11/12 max-w-5xl">
+    @if(isLoading){
+    <div class="flex flex-col gap-4 w-full">
+      <div class="skeleton h-32 w-full"></div>
+      <div class="skeleton h-4 w-28"></div>
+      <div class="skeleton h-4 w-full"></div>
+      <div class="skeleton h-4 w-full"></div>
+    </div>
+    }
+    @else {
+
+    <div class="bg-gray-600 bg-blend-multiply border-2 rounded-lg" style="background-image: url({{githubData?.owner.avatar_url}});
           background-repeat: no-repeat;
           background-position: center; 
         ">
-          <div class="hero-overlay bg-opacity-40"></div>
-          <div class="hero-content text-center text-neutral-content">
-            <div class="max-w-md">
-              <h1 class="mb-5 text-5xl font-bold">{{githubData?.name}}</h1>
-              <p class="mb-5">{{githubData?.description}}</p>
-              @for(topic of githubData?.topics; track topic){
-                <div class="badge badge-primary pr-2 mr-2">{{topic}}</div>
-              }
-              <div class="pt-6">
-                <button class="btn">
-                  {{githubData?.stargazers_count}}
-                    <div class="rating">
-                      <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-500" checked />
-                    </div>
-                </button>
+      <div class="hero-overlay bg-opacity-40"></div>
+      <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-md">
+          <h1 class="mb-5 text-5xl font-bold">{{githubData?.name}}</h1>
+          <p class="mb-5">{{githubData?.description}}</p>
+          @for(topic of githubData?.topics; track topic){
+          <div class="badge badge-primary pr-2 mr-2">{{topic}}</div>
+          }
+          <div class="pt-6">
+            <button class="btn">
+              {{githubData?.stargazers_count}}
+              <div class="rating">
+                <input type="radio" name="rating-4" class="mask mask-star-2 bg-yellow-500" checked />
               </div>
-
-              <h2>Created at: {{githubData?.created_at}}</h2>
-              <h2>Last Updated at: {{githubData?.updated_at}}</h2>
-              <h2>Size: {{githubData?.size}}B</h2>
-              <h2>Forks: {{githubData?.fork}}</h2>
-            </div>
+            </button>
           </div>
+
+          <h2>Created at: {{githubData?.created_at}}</h2>
+          <h2>Last Updated at: {{githubData?.updated_at}}</h2>
+          <h2>Size: {{githubData?.size}}B</h2>
+          <h2>Forks: {{githubData?.fork}}</h2>
         </div>
+      </div>
+    </div>
 
-        <div role="alert" class="alert shadow-lg mt-6 mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <div>
-            <h3 class="font-bold">GitHub Star History</h3>
-            <div class="text-xs">You have 1 unread message</div>
-          </div>
-        </div>
+    <div role="alert" class="alert shadow-lg mt-6 mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info shrink-0 w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <div>
+        <h3 class="font-bold">GitHub Star History</h3>
+        <div class="text-xs">You have 1 unread message</div>
+      </div>
+    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-1 gap-6 lg:gap-1 sm:grid-cols-1">
-          <div class="flex items-center justify-center">
-            <img src="https://api.star-history.com/svg?repos={{githubData?.full_name}}&type=Timeline" alt="">
-          </div>
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-6 lg:gap-1 sm:grid-cols-1">
+      <div class="flex items-center justify-center">
+        <img src="https://api.star-history.com/svg?repos={{githubData?.full_name}}&type=Timeline" alt="">
+      </div>
 
-          <!-- <div class="text-center flex items-center justify-center">
+      <!-- <div class="text-center flex items-center justify-center">
             <div class="stats shadow pt-6">
       
               <div class="stat">
@@ -130,37 +131,37 @@
             </div>
           </div> -->
 
-        </div>
+    </div>
 
 
-       
 
 
-        <!-- <div class="mockup-window border bg-base-300">
+
+    <!-- <div class="mockup-window border bg-base-300">
           <div class="flex justify-center px-4 py-16 bg-base-200">
             <pre><code>{{decodeReadMe(readMeData.content)}}</code></pre>
           </div>
         </div> -->
 
-        <!-- <markdown emoji
+    <!-- <markdown emoji
           [data]="decodeReadMe(readMeData.content)">
         </markdown> -->
-        <!-- <markdown class="variable-binding" [data]="decodeReadMe(readMeData.content)"></markdown> -->
+    <!-- <markdown class="variable-binding" [data]="decodeReadMe(readMeData.content)"></markdown> -->
 
-        <!-- <h2>{{decodeReadMe(readMeData.content)}}</h2> -->
+    <!-- <h2>{{decodeReadMe(readMeData.content)}}</h2> -->
 
-        <!-- <figure class="px-6 pt-6">
+    <!-- <figure class="px-6 pt-6">
           <img src="
           https://socialify.git.ci/AAVision/beSideYou/image?font=Rokkitt&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark"
           alt="project-image-1" class="rounded-xl transform-gpu hover:scale-y-105 transition duration-500 cursor-pointer " />
         </figure> -->
 
-      }
-      
-      <div class="modal-action">
-        <form method="dialog">
-          <button class="btn" (click)="closeModal()">Close</button>
-        </form>
-      </div>
+    }
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn" (click)="closeModal()">Close</button>
+      </form>
     </div>
+  </div>
 </dialog>
