@@ -1,0 +1,15 @@
+<div class="max-w-sm border border-solid border-[#9a9a9a] bg-slate-50	rounded-lg object-cover shadow-xl z-50">
+    <figure class="px-6 pt-6">
+      <div class="text-center flex items-center justify-center">
+        <img attr.src="{{createImageUrl(metadata.url)}}"
+        attr.alt="project-image-{{metadata.id}}" class="rounded-xl transform-gpu hover:scale-y-105 transition duration-500" />
+    </div>
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">{{metadata.name}}</h2>
+      <p>{{metadata.description}}</p>
+      <div class="card-actions justify-end">
+        <button class="btn btn-neutral" (click)="shareInfo(metadata.name, metadata.url)">Check</button>
+      </div>
+    </div>
+</div>

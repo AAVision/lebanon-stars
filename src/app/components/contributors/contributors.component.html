@@ -1,0 +1,15 @@
+<div class="w-full border border-solid border-[#9a9a9a] bg-slate-50 rounded-lg object-cover shadow-xl z-50">
+   <div class="pt-3 w-11/12 mx-auto p-6 lg:p-8 overflow-x-hidden">
+    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight">Contributors!</h1>
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-6 lg:gap-4 sm:grid-cols-2 z-50 place-items-center">
+        @for(contributor of contributors; track contributor.id){
+            <div class="tooltip" attr.data-tip="{{contributor.login}}">
+                <a attr.href="{{contributor.html_url}}" target="_blank" class="cursor-pointer">
+                    <img src="{{contributor.avatar_url}}" class="rounded-lg transform-gpu hover:scale-y-105 transition duration-500 " alt="">
+                </a>
+            </div>
+        }
+    </div>
+   </div>
+  
+</div>
