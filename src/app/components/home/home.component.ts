@@ -140,5 +140,8 @@ export class HomeComponent {
     return atob(data)
   }
 
+  buildStarHistory(fullName: string): string{
+    return `https://api.star-history.com/svg?repos=${fullName}&type=Timeline`
+  }
 }
 
