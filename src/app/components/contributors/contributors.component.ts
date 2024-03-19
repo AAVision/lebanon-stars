@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { GitHubContributor } from '../../models/github';
-import { ProjectService } from '../../services/project.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { catchError, map, of } from 'rxjs';
+import { GithubService } from '../../services/github.service';
 
 @Component({
   selector: 'app-contributors',
@@ -15,13 +15,13 @@ export class ContributorsComponent {
   contributors: GitHubContributor[] = []
   lebanonStar: string = "AAVision/beSideYou"
 
-  constructor(private _projectService: ProjectService){
-    this._projectService.getGitHubContributors(this.lebanonStar).pipe(
+  constructor(private _githubService: GithubService) {
+    this._githubService.getGitHubContributors(this.lebanonStar).pipe(
       takeUntilDestroyed(),
       map((data: GitHubContributor[]) => {
         this.contributors = data ? data : []
       }),
-      catchError((_)=>{
+      catchError((_) => {
         return of([])
       })
     ).subscribe()

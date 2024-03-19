@@ -1,12 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Project } from '../../models/project';
+import { Project, ShareInfo } from '../../models/project';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-
-export interface ShareInfo {
-  url: string
-  name: string
-}
 
 @Component({
   selector: 'app-project',
@@ -20,10 +15,10 @@ export interface ShareInfo {
 export class ProjectComponent {
   @Input('metadata') metadata: Project;
   @Output('info') info = new EventEmitter<ShareInfo>();
-  constructor(private sanitizer: DomSanitizer){}
+  constructor(private sanitizer: DomSanitizer) { }
   loadUrl: string = '../../../assets/images/loader.gif'
 
-  shareInfo(name: string, url: string){
+  shareInfo(name: string, url: string) {
     this.info.emit(
       {
         name: name,
@@ -32,15 +27,15 @@ export class ProjectComponent {
     )
   }
 
-  createSlug(url: string): string{
+  createSlug(url: string): string {
     let pathname = new URL(url).pathname;
     let pathnames = []
-    if(pathname){ 
+    if (pathname) {
       pathnames = pathname.split("/")
     }
 
     var slug = pathnames.slice(-2)
-    if (slug.length == 2){
+    if (slug.length == 2) {
       return `${slug[0]}/${slug[1]}`
     }
 
