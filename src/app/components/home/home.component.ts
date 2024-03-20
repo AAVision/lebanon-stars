@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, DestroyRef, ElementRef, ViewChild, inject } from '@angular/core';
-import { ProjectComponent} from '../project/project.component';
+import { ProjectComponent } from '../project/project.component';
 import { Project, ShareInfo } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -12,12 +12,13 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { RouterModule } from '@angular/router';
 import { GithubService } from '../../services/github.service';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    ProjectComponent,
+    ProjectComponent, NgxPaginationModule,
     LazyLoadImageModule, CommonModule, ReactiveFormsModule,
     FilterPipe, MarkdownModule, RouterModule, LazyLoadImageModule
   ],
@@ -38,7 +39,8 @@ export class HomeComponent {
   readMeData: GitHubReadMe
   searchForm: FormGroup
   searchText = ""
-  defaultImage: string = '../../../assets/images/loader.gif'
+  defaultImage: string = "../../../assets/images/loader.gif"
+  pageNumber: number = 1
 
   constructor(private _projectService: ProjectService, private cdr: ChangeDetectorRef, private _fb: FormBuilder, private _githubService: GithubService) {
     this._projectService.getProjects().pipe(
@@ -140,8 +142,13 @@ export class HomeComponent {
     return atob(data)
   }
 
-  buildStarHistory(fullName: string): string{
+  buildStarHistory(fullName: string): string {
     return `https://api.star-history.com/svg?repos=${fullName}&type=Timeline`
+  }
+
+  removeTime(datetime: string): string {
+    if (datetime == "") return ""
+    return datetime.toString().split('T')[0];
   }
 }
 
