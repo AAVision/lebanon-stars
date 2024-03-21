@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -20,9 +24,9 @@
     background: #555;
 }
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     width: 100%;
@@ -41,4 +45,8 @@ body {
     margin-bottom: 0 !important;
     background-color: rgb(248 250 252);
     border-radius: 9px;
+}
+
+.ngx-pagination .current {
+    background: #000 !important;
 }

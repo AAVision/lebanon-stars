@@ -81,6 +81,11 @@ export class HomeComponent {
     this.block.nativeElement.classList.remove('modal-open');
   }
 
+  onPageChange(page: number): void {
+    this.pageNumber = page;
+    window.scrollTo(0, 0);
+  }
+
   getRadomBadge(): string {
     const random = Math.floor(Math.random() * this.badges.length);
     return this.badges[random]
@@ -150,5 +155,6 @@ export class HomeComponent {
     if (datetime == "") return ""
     return datetime.toString().split('T')[0];
   }
+
 }
 
