@@ -9,3 +9,8 @@ export interface ShareInfo {
     url: string
     name: string
 }
+
+export interface RepoLanguage{
+    key: string
+    value: number
+}
