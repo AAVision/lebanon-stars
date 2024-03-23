@@ -45,13 +45,13 @@
 
   </div>
 
-  <div class="grid grid-cols-2">
-
-    <div role="alert" class="alert shadow-lg mt-6 mb-6 w-50 text-right col-start-4 col-end-5">
-      <pagination-controls [responsive]="true" (pageChange)="onPageChange($event)"></pagination-controls>
+  @if(projects.length > 0){
+    <div class="grid grid-cols-2">
+      <div role="alert" class="alert shadow-lg mt-6 mb-6 w-50 text-right col-start-4 col-end-5">
+        <pagination-controls [responsive]="true" (pageChange)="onPageChange($event)"></pagination-controls>
+      </div>
     </div>
-
-  </div>
+  }
 
 </div>
 
