@@ -46,11 +46,11 @@
   </div>
 
   @if(projects.length > 0){
-    <div class="grid grid-cols-2">
-      <div role="alert" class="alert shadow-lg mt-6 mb-6 w-50 text-right col-start-4 col-end-5">
-        <pagination-controls [responsive]="true" (pageChange)="onPageChange($event)"></pagination-controls>
-      </div>
+  <div class="grid grid-cols-2">
+    <div role="alert" class="alert shadow-lg mt-6 mb-6 w-50 text-right col-start-4 col-end-5">
+      <pagination-controls [responsive]="true" (pageChange)="onPageChange($event)"></pagination-controls>
     </div>
+  </div>
   }
 
 </div>
@@ -158,131 +158,14 @@
               </svg>
             </div>
             <div class="timeline-end timeline-box">{{githubData?.fork ? '✅':'❌'}}</div>
-
           </li>
-          <!-- <li>
-            <hr/>
-            <div class="timeline-start">2015</div>
-            <div class="timeline-middle">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
-            </div>
-            <div class="timeline-end timeline-box">Apple Watch</div>
-          </li> -->
         </ul>
-
-
-        <!-- <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-
-          <li>
-            <hr />
-            <div class="timeline-middle">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="timeline-start md:text-end mb-10">
-              <time class="font-mono italic">Size:</time>
-              <div class="text-lg font-black">{{githubData?.size / 1024 | number : '1.0-2'}} KB</div>
-            </div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-middle">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="timeline-end mb-10">
-              <time class="font-mono italic">Forks:</time>
-              <div class="text-lg font-black">{{githubData?.fork}}</div>
-            </div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-middle">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="timeline-start md:text-end mb-10">
-              <time class="font-mono italic">2015</time>
-              <div class="text-lg font-black">Apple Watch</div>
-            </div>
-          </li>
-        </ul> -->
       </div>
     </div>
 
     <div role="alert" class="alert shadow-lg mt-6 mb-6 flex justify-center items-center">
       <img class="rounded-lg" [defaultImage]="defaultImage" [lazyLoad]="buildStarHistory(githubData?.full_name)" alt="">
     </div>
-
-    <!-- <div class="grid grid-cols-1 md:grid-cols-1 gap-6 lg:gap-1 sm:grid-cols-1">
-      <div class="flex items-center justify-center">
-        <img src="https://api.star-history.com/svg?repos={{githubData?.full_name}}&type=Timeline" alt="">
-      </div>
-
-      <div class="text-center flex items-center justify-center">
-            <div class="stats shadow pt-6">
-      
-              <div class="stat">
-                <div class="stat-figure text-secondary">
-                  <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m11.322 2.923c.126-.259.39-.423.678-.423.289 0 .552.164.678.423.974 1.998 2.65 5.44 2.65 5.44s3.811.524 6.022.829c.403.055.65.396.65.747 0 .19-.072.383-.231.536-1.61 1.538-4.382 4.191-4.382 4.191s.677 3.767 1.069 5.952c.083.462-.275.882-.742.882-.122 0-.244-.029-.355-.089-1.968-1.048-5.359-2.851-5.359-2.851s-3.391 1.803-5.359 2.851c-.111.06-.234.089-.356.089-.465 0-.825-.421-.741-.882.393-2.185 1.07-5.952 1.07-5.952s-2.773-2.653-4.382-4.191c-.16-.153-.232-.346-.232-.535 0-.352.249-.694.651-.748 2.211-.305 6.021-.829 6.021-.829s1.677-3.442 2.65-5.44z" fill-rule="nonzero"/></svg>
-                </div>
-                <div class="stat-title">Stars</div>
-                <div class="stat-value">2</div>
-              </div>
-    
-              <div class="stat">
-                <div class="stat-figure text-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 10.031v-6.423l-6.036-3.608-5.964 3.569v6.499l-6 3.224v7.216l6.136 3.492 5.864-3.393 5.864 3.393 6.136-3.492v-7.177l-6-3.3zm-1.143.036l-4.321 2.384v-4.956l4.321-2.539v5.111zm-4.895-8.71l4.272 2.596-4.268 2.509-4.176-2.554 4.172-2.551zm-10.172 12.274l4.778-2.53 4.237 2.417-4.668 2.667-4.347-2.554zm4.917 3.587l4.722-2.697v5.056l-4.722 2.757v-5.116zm6.512-3.746l4.247-2.39 4.769 2.594-4.367 2.509-4.649-2.713zm9.638 6.323l-4.421 2.539v-5.116l4.421-2.538v5.115z"/></svg>
-                </div>
-                <div class="stat-title">Size</div>
-                <div class="stat-value">{{githubData?.size / 1024 | number : '1.0-2'}} KB</div>
-              </div>
-              
-              <div class="stat">
-                <div class="stat-figure text-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 3c0-1.657-1.343-3-3-3s-3 1.343-3 3c0 1.323.861 2.433 2.05 2.832.168 4.295-2.021 4.764-4.998 5.391-1.709.36-3.642.775-5.052 2.085v-7.492c1.163-.413 2-1.511 2-2.816 0-1.657-1.343-3-3-3s-3 1.343-3 3c0 1.305.837 2.403 2 2.816v12.367c-1.163.414-2 1.512-2 2.817 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.295-.824-2.388-1.973-2.808.27-3.922 2.57-4.408 5.437-5.012 3.038-.64 6.774-1.442 6.579-7.377 1.141-.425 1.957-1.514 1.957-2.803zm-16.8 0c0-.993.807-1.8 1.8-1.8s1.8.807 1.8 1.8-.807 1.8-1.8 1.8-1.8-.807-1.8-1.8zm3.6 18c0 .993-.807 1.8-1.8 1.8s-1.8-.807-1.8-1.8.807-1.8 1.8-1.8 1.8.807 1.8 1.8z"/></svg>            </div>
-                <div class="stat-title">Fork</div>
-                <div class="stat-value">{{githubData?.fork}}</div>
-              </div>
-              
-            </div>
-          </div>
-
-    </div> -->
-
-
-
-
-
-    <!-- <div class="mockup-window border bg-base-300">
-          <div class="flex justify-center px-4 py-16 bg-base-200">
-            <pre><code>{{decodeReadMe(readMeData.content)}}</code></pre>
-          </div>
-        </div> -->
-
-    <!-- <markdown [data]="decodeReadMe(readMeData.content)">
-        </markdown> -->
-    <!-- <markdown class="variable-binding" [data]="decodeReadMe(readMeData.content)"></markdown> -->
-
-    <!-- <h2>{{decodeReadMe(readMeData.content)}}</h2> -->
-
-    <!-- <figure class="px-6 pt-6">
-          <img src="
-          https://socialify.git.ci/AAVision/beSideYou/image?font=Rokkitt&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark"
-          alt="project-image-1" class="rounded-xl transform-gpu hover:scale-y-105 transition duration-500 cursor-pointer " />
-        </figure> -->
-
     }
 
     <div class="modal-action">
