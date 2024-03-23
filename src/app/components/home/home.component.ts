@@ -41,6 +41,7 @@ export class HomeComponent {
   searchText = ""
   defaultImage: string = "../../../assets/images/loader.gif"
   pageNumber: number = 1
+  languageData = []
 
   constructor(private _projectService: ProjectService, private cdr: ChangeDetectorRef, private _fb: FormBuilder, private _githubService: GithubService) {
     this._projectService.getProjects().pipe(
@@ -121,6 +122,22 @@ export class HomeComponent {
     ).subscribe()
   }
 
+  getGithubRepoLangs(slug: string) {
+    this._githubService.getGithubRepoLangs(slug).pipe(
+      takeUntilDestroyed(this.destroyRef),
+      map((data: any) => {
+        this.languageData = Object.keys(data).map(key => ({ key, value: data[key] }));
+        console.log(this.languageData)
+      }),
+      catchError((_) => {
+        return of([])
+      }),
+      finalize(() => {
+        this.isLoading = false
+      })
+    ).subscribe()
+  }
+
   createSlug(url: string): string {
     let pathname = new URL(url).pathname;
     let pathnames = []
@@ -141,6 +158,7 @@ export class HomeComponent {
     let slug = this.createSlug(data.url)
     this.getGithubInfo(slug)
     this.getReadMeInfo(slug)
+    this.getGithubRepoLangs(slug)
   }
 
   decodeReadMe(data: string): string {
@@ -153,7 +171,7 @@ export class HomeComponent {
 
   removeTime(datetime: string): string {
     if (datetime == "") return ""
-    return datetime.toString().split('T')[0];
+    return datetime.split('T')[0];
   }
 
 }
