@@ -22,4 +22,8 @@ export class GithubService {
     return this._http.get<GitHubContributor[]>(`https://api.github.com/repos/${slug}/contributors`)
   }
 
+  public getGithubRepoLangs(slug: string): Observable<any>{
+    return this._http.get<any>(`https://api.github.com/repos/${slug}/languages`)
+  }
+
 }
