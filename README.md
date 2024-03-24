@@ -9,7 +9,7 @@
 - Tailwind 3.4.1
 - DaisyUI 4.7.3
 
-## Docker
+## Docker :whale:
 
 You can run the solution using docker:
 Build Image:
