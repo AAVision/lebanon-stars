@@ -1,27 +1,53 @@
-# LeabnonStars
+# Leabnon Stars
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+![alt text](https://github.com/AAVision/lebanon-stars/blob/37063f85b391caeb19cf102b943da84cb5518a85/src/assets/images/logo-min.webp)
+
+
+
+## Used Technologies
+- Angular 17
+- Tailwind 3.4.1
+- DaisyUI 4.7.3
+
+## Docker
+
+You can run the solution using docker:
+Build Image:
+```bash
+docker build -t lebanon-star .
+```
+
+Run the Docker container:
+```bash
+docker run -p 4201:4200 lebanon-star
+```
+
+You can head to `localhost:4201` to access the application.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Contribution
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Star the repo.
+- Fork it.
+- You can add your repo info to the `data.json` file in `src/assets/files/data.json`
+```bash
+[
+    {
+        "id": "1",
+        "name": "Beside You",
+        "description": "❤️ We can motivate!",
+        "url": "https://github.com/AAVision/beSideYou"
+    },
 
-## Build
+    ...
+]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+- Create a Pull request and add your Github repo link to the description of the PR.
 
-## Running unit tests
+## LICENSE
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/AAVision/lebanon-stars/blob/main/LICENSE) file for details.
