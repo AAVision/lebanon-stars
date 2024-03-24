@@ -5,7 +5,7 @@
             @for(contributor of contributors; track contributor.id){
             <div class="tooltip" attr.data-tip="{{contributor.login}}">
                 <a attr.href="{{contributor.html_url}}" target="_blank" class="cursor-pointer">
-                    <img src="{{contributor.avatar_url}}"
+                    <img [defaultImage]="defaultImage" [lazyLoad]="contributor?.avatar_url"
                         class="rounded-lg transform-gpu hover:scale-y-105 transition duration-500 " alt="">
                 </a>
             </div>
