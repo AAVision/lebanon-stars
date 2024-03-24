@@ -12,24 +12,6 @@
       </label>
     </form>
 
-    <!-- <div class="join">
-        <div>
-          <div>
-            <input class="input input-bordered join-item" placeholder="Search"/>
-          </div>
-        </div>
-        <select class="select select-bordered join-item">
-          <option disabled selected>Filter</option>
-          <option>Sci-fi</option>
-          <option>Drama</option>
-          <option>Action</option>
-        </select>
-        <div class="indicator">
-          <span class="indicator-item badge badge-secondary">new</span> 
-          <button class="btn join-item">Search</button>
-        </div>
-      </div> -->
-
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-4 sm:grid-cols-2 z-50">
@@ -38,7 +20,7 @@
     <app-project [metadata]="project" (info)="receiveInfo($event)"></app-project>
     }@empty {
     <div class="flex items-center justify-center">
-      <img src="../../../assets/images/no-data.png" alt=""
+      <img src="../../../assets/images/no-data.webp" alt=""
         class="text-center rounded-xl transform-gpu hover:scale-y-105 transition duration-500 ">
     </div>
     }
@@ -221,7 +203,8 @@
     </div>
 
     <div role="alert" class="alert shadow-lg mt-6 mb-6 flex justify-center items-center">
-      <img class="rounded-lg" [defaultImage]="defaultImage" [lazyLoad]="buildStarHistory(githubData?.full_name)" alt="lebanon-stars-{{githubData?.full_name}}">
+      <img class="rounded-lg" [defaultImage]="defaultImage" [lazyLoad]="buildStarHistory(githubData?.full_name)"
+        alt="lebanon-stars-{{githubData?.full_name}}">
     </div>
     }
 
