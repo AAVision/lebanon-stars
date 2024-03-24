@@ -9,7 +9,7 @@
 - Tailwind 3.4.1
 - DaisyUI 4.7.3
 
-## Docker
+## Docker :whale:
 
 You can run the solution using docker:
 Build Image:
@@ -28,7 +28,7 @@ You can head to `localhost:4201` to access the application.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Contribution
+## Contribution :rotating_light:
 
 - Star the repo.
 - Fork it.
@@ -48,6 +48,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ```
 - Create a Pull request and add your Github repo link to the description of the PR.
 
-## LICENSE
+## LICENSE :balance_scale:
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/AAVision/lebanon-stars/blob/main/LICENSE) file for details.
