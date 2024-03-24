@@ -13,15 +13,16 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 import { RouterModule } from '@angular/router';
 import { GithubService } from '../../services/github.service';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { CountUpModule } from 'ngx-countup';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    ProjectComponent, NgxPaginationModule, CountUpModule,
+    ProjectComponent, NgxPaginationModule,
     LazyLoadImageModule, CommonModule, ReactiveFormsModule,
-    FilterPipe, MarkdownModule, RouterModule, LazyLoadImageModule
+    FilterPipe, MarkdownModule, RouterModule, LazyLoadImageModule,
+
   ],
   providers: [],
   templateUrl: './home.component.html',
@@ -38,7 +39,7 @@ export class HomeComponent {
 
   projects: Project[] = []
   githubData: GitHubResponse
-  readMeData: GitHubReadMe
+  readMeData: string
   searchForm: FormGroup
   searchText = ""
   defaultImage: string = "../../../assets/images/loader.gif"
@@ -109,26 +110,26 @@ export class HomeComponent {
     ).subscribe()
   }
 
-  getReadMeInfo(slug: string): void {
-    this._githubService.getReadMeInfo(slug).pipe(
-      takeUntilDestroyed(this.destroyRef),
-      map((data: GitHubReadMe) => {
-        this.readMeData = data
-      }),
-      catchError((_) => {
-        return of([])
-      }),
-      finalize(() => {
-        this.isLoading = false
-      })
-    ).subscribe()
-  }
+  // getReadMeInfo(slug: string): void {
+  //   this._githubService.getReadMeInfo(slug).pipe(
+  //     takeUntilDestroyed(this.destroyRef),
+  //     map((data: GitHubReadMe) => {
+  //       this.readMeData = data
+  //     }),
+  //     catchError((_) => {
+  //       return of([])
+  //     }),
+  //     finalize(() => {
+  //       this.isLoading = false
+  //     })
+  //   ).subscribe()
+  // }
 
   getGithubRepoLangs(slug: string) {
     this._githubService.getGithubRepoLangs(slug).pipe(
       takeUntilDestroyed(this.destroyRef),
       map((data: any) => {
-        if(data){
+        if (data) {
           this.languageData = Object.keys(data).map(key => ({ key, value: data[key] }));
           Object.values(this.languageData).forEach(val => {
             this.languageFilesCount += val.value
@@ -163,7 +164,7 @@ export class HomeComponent {
     this.showModal()
     let slug = this.createSlug(data.url)
     this.getGithubInfo(slug)
-    this.getReadMeInfo(slug)
+    this.readMeData = `https://raw.githubusercontent.com/${slug}/master/README.md`
     this.getGithubRepoLangs(slug)
   }
 
@@ -177,7 +178,8 @@ export class HomeComponent {
 
   removeTime(datetime: string): string {
     if (datetime == "") return ""
-    return datetime.split('T')[0];
+    const date = new Date(datetime)
+    return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
   }
 
 }

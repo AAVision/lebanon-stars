@@ -76,33 +76,25 @@
       </div>
     </div>
 
-    <!-- <h1 [countUp]="345">0</h1> -->
+    <div class="mockup-code mt-6">
+      <pre class="p-4">
+        <markdown [src]="readMeData"></markdown>
+      </pre>
+    </div>
 
-    <div class="stack w-full mt-6 text-center">
-      <div class="card shadow-md bg-accent text-accent-content">
-        <div class="card-body">
-          <div class="stats stats-vertical lg:stats-horizontal shadow">
+    <div role="alert" class="alert shadow-lg mt-6 mb-6 flex text-center">
+      <div class="stats stats-vertical lg:stats-horizontal shadow w-full">
 
-            @for(data of languageData; track data.key; let idx = $index){
-            @if(idx >= 4){
-            <!-- To be added later -->
-            }@else {
-            <div class="stat">
-              <div class="stat-title">{{data.key}}</div>
-              <div class="stat-value">{{(data.value / languageFilesCount) | percent}}</div>
-            </div>
-            }
-            }
-          </div>
+        @for(data of languageData; track data.key; let idx = $index){
+        @if(idx >= 4){
+        <!-- To be added later -->
+        }@else {
+        <div class="stat">
+          <div class="stat-title">{{data.key}}</div>
+          <div class="stat-value">{{(data.value / languageFilesCount) | percent}}</div>
         </div>
-      </div>
-      <div class="card shadow bg-accent text-accent-content">
-        <div class="card-body">
-        </div>
-      </div>
-      <div class="card shadow-sm bg-accent text-accent-content">
-        <div class="card-body">
-        </div>
+        }
+        }
       </div>
     </div>
 
@@ -196,7 +188,8 @@
                   clip-rule="evenodd" />
               </svg>
             </div>
-            <div class="timeline-end timeline-box">{{githubData?.homepage}}</div>
+            <div class="timeline-end timeline-box"><a [href]="githubData?.homepage" target="_blank"
+                class="link">{{githubData?.homepage}}</a></div>
           </li>
         </ul>
       </div>

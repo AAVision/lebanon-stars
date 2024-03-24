@@ -9,6 +9,8 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withViewTransitions(), withHashLocation()),
     provideHttpClient(),
-    importProvidersFrom(MarkdownModule.forRoot())
+    importProvidersFrom(
+      MarkdownModule.forRoot()
+    )
   ]
 };
