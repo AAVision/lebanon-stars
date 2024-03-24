@@ -46,8 +46,8 @@ export class ProjectComponent {
     return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }
 
-  createImageUrl(slug: string): SafeUrl {
-    return this.sanitizeImageUrl(`https://socialify.git.ci/${this.createSlug(slug)}/image?font=Rokkitt&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark`)
+  createImageUrl(slug: string): string {
+    return (`https://socialify.git.ci/${this.createSlug(slug)}/image?font=Rokkitt&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark`)
   }
 
 }

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, DestroyRef, ElementRef, ViewChild, inject } from '@angular/core';
 import { ProjectComponent } from '../project/project.component';
-import { Project, ShareInfo } from '../../models/project';
+import { Project, RepoLanguage, ShareInfo } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { catchError, debounceTime, finalize, map, of } from 'rxjs';
@@ -13,12 +13,13 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 import { RouterModule } from '@angular/router';
 import { GithubService } from '../../services/github.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CountUpModule } from 'ngx-countup';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    ProjectComponent, NgxPaginationModule,
+    ProjectComponent, NgxPaginationModule, CountUpModule,
     LazyLoadImageModule, CommonModule, ReactiveFormsModule,
     FilterPipe, MarkdownModule, RouterModule, LazyLoadImageModule
   ],
@@ -29,6 +30,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 export class HomeComponent {
 
   destroyRef = inject(DestroyRef)
+  languageFilesCount: number = 0
 
   @ViewChild("dataBlock", { static: true }) block: ElementRef;
   isLoading: boolean = true
@@ -41,7 +43,7 @@ export class HomeComponent {
   searchText = ""
   defaultImage: string = "../../../assets/images/loader.gif"
   pageNumber: number = 1
-  languageData = []
+  languageData: RepoLanguage[] = []
 
   constructor(private _projectService: ProjectService, private cdr: ChangeDetectorRef, private _fb: FormBuilder, private _githubService: GithubService) {
     this._projectService.getProjects().pipe(
@@ -126,8 +128,12 @@ export class HomeComponent {
     this._githubService.getGithubRepoLangs(slug).pipe(
       takeUntilDestroyed(this.destroyRef),
       map((data: any) => {
-        this.languageData = Object.keys(data).map(key => ({ key, value: data[key] }));
-        console.log(this.languageData)
+        if(data){
+          this.languageData = Object.keys(data).map(key => ({ key, value: data[key] }));
+          Object.values(this.languageData).forEach(val => {
+            this.languageFilesCount += val.value
+          });
+        }
       }),
       catchError((_) => {
         return of([])
