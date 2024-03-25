@@ -1,10 +1,10 @@
 # Leabnon Stars
 
+**We're successful developers and software engineers from Lebanon who invented a bunch of success repositories in a place filled with obstacles and economic crises!**
+
 <p align="center">
   <img src="https://github.com/AAVision/lebanon-stars/blob/37063f85b391caeb19cf102b943da84cb5518a85/src/assets/images/lebanon.svg" />
 </p>
-
-**We're successful developers and software engineers from Lebanon who invented a bunch of success repositories in a place filled with obstacles and economic crises!**
 
 ## Used Technologies
 - Angular 17
