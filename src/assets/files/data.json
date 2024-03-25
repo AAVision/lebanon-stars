@@ -1,92 +1,26 @@
 [
     {
         "id": "1",
-        "name": "First 1",
-        "description": "was here",
+        "name": "Beside You",
+        "description": "We can motivate!",
         "url": "https://github.com/AAVision/beSideYou"
     },
     {
-        "id": "1",
-        "name": "First 2",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
+        "id": "2",
+        "name": "STEGANO-REX",
+        "description": "🔒 🔑 STEGANO-REX is an image steganography GUI that helps the user to hide image inside an image using LSB algorithm, the project was built in python using PyQt5,PySide2 and image processing libraries.",
+        "url": "https://github.com/AAVision/STEGANO-REX"
     },
     {
-        "id": "1",
-        "name": "First 3",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
+        "id": "3",
+        "name": "gitcs",
+        "description": "📈 Command line tool written in Go. It allows developers to scan their local Git repositories and generate a visual contributions graph.",
+        "url": "https://github.com/knbr13/gitcs"
     },
     {
-        "id": "1",
-        "name": "First 4",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 5",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 6",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 7",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 8",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 9",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 10",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 11",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 12",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 13",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 14",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
-    },
-    {
-        "id": "1",
-        "name": "First 15",
-        "description": "was here",
-        "url": "https://github.com/AAVision/beSideYou"
+        "id": "4",
+        "name": "cli algorithms visualizer",
+        "description": "Simple CLI-based Algorithms Visualizer",
+        "url": "https://github.com/go-nerds/cli-algorithms-visualizer"
     }
 ]

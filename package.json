@@ -31,6 +31,7 @@
     "@angular-devkit/build-angular": "^17.1.2",
     "@angular/cli": "^17.1.2",
     "@angular/compiler-cli": "^17.1.0",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@types/jasmine": "~5.1.0",
     "daisyui": "^4.7.3",
     "jasmine-core": "~5.1.0",

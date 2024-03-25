@@ -50,7 +50,7 @@ export class HomeComponent {
     this._projectService.getProjects().pipe(
       takeUntilDestroyed(),
       map((data: Project[]) => {
-        this.projects = data ? data : []
+        this.projects = this.shuffleArray(data)
       }),
       catchError((_) => {
         return of([])
@@ -180,6 +180,10 @@ export class HomeComponent {
     if (datetime == "") return ""
     const date = new Date(datetime)
     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+  }
+
+  shuffleArray(array: Project[]): Project[]{
+    return array.sort(()=> Math.random() - 0.5)
   }
 
 }
