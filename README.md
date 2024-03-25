@@ -1,7 +1,8 @@
 # Leabnon Stars
 
-![alt text](https://github.com/AAVision/lebanon-stars/blob/37063f85b391caeb19cf102b943da84cb5518a85/src/assets/images/lebanon.svg)
-
+<div style="text-align:center">
+  <img width="500" height="300" src="https://github.com/AAVision/lebanon-stars/blob/37063f85b391caeb19cf102b943da84cb5518a85/src/assets/images/lebanon.svg" />
+</div>
 
 ## Used Technologies
 - Angular 17
