@@ -1,4 +1,4 @@
-# Leabnon Stars
+# Leabnon Stars :star:
 
 **We're successful developers and software engineers from Lebanon who invented a bunch of success repositories in a place filled with obstacles and economic crises!**
 
@@ -11,7 +11,7 @@
 - Tailwind 3.4.1
 - DaisyUI 4.7.3
 
-## Development server
+## Development server :rocket:
 
 - Install Node version `21.5.0` using NVM or from Node's website.
 - Run `npm install` to install dependencies.
