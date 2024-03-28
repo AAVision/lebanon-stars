@@ -74,24 +74,25 @@ export class HomeComponent {
   }
 
   ngAfterViewInit(): void {
-    this.cdr.detectChanges();
+    this.cdr.detectChanges()
   }
 
   showModal(): void {
-    this.block.nativeElement.classList.add('modal-open');
+    this.block.nativeElement.classList.add('modal-open')
   }
 
   closeModal(): void {
-    this.block.nativeElement.classList.remove('modal-open');
+    this.languageFilesCount = 0
+    this.block.nativeElement.classList.remove('modal-open')
   }
 
   onPageChange(page: number): void {
-    this.pageNumber = page;
-    window.scrollTo(0, 0);
+    this.pageNumber = page
+    window.scrollTo(0, 0)
   }
 
   getRadomBadge(): string {
-    const random = Math.floor(Math.random() * this.badges.length);
+    const random = Math.floor(Math.random() * this.badges.length)
     return this.badges[random]
   }
 
@@ -110,21 +111,6 @@ export class HomeComponent {
     ).subscribe()
   }
 
-  // getReadMeInfo(slug: string): void {
-  //   this._githubService.getReadMeInfo(slug).pipe(
-  //     takeUntilDestroyed(this.destroyRef),
-  //     map((data: GitHubReadMe) => {
-  //       this.readMeData = data
-  //     }),
-  //     catchError((_) => {
-  //       return of([])
-  //     }),
-  //     finalize(() => {
-  //       this.isLoading = false
-  //     })
-  //   ).subscribe()
-  // }
-
   getGithubRepoLangs(slug: string) {
     this._githubService.getGithubRepoLangs(slug).pipe(
       takeUntilDestroyed(this.destroyRef),
@@ -133,7 +119,7 @@ export class HomeComponent {
           this.languageData = Object.keys(data).map(key => ({ key, value: data[key] }));
           Object.values(this.languageData).forEach(val => {
             this.languageFilesCount += val.value
-          });
+          })
         }
       }),
       catchError((_) => {

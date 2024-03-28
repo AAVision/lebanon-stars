@@ -13,10 +13,12 @@
     </form>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-4 sm:grid-cols-2 z-50 auto-rows-fr">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-4 sm:grid-cols-2 z-50">
     @for(project of projects | filter:searchText | paginate: { itemsPerPage: 8, currentPage: pageNumber }; track
     project.id){
+
     <app-project [metadata]="project" (info)="receiveInfo($event)"></app-project>
+
     }@empty {
     <div class="flex items-center justify-center">
       <img src="../../../assets/images/no-data.webp" alt=""
@@ -51,10 +53,19 @@
     }
     @else {
 
-    <div class="bg-gray-600 bg-blend-multiply border-2 rounded-lg" style="background-image: url({{githubData?.owner.avatar_url}});
-          background-repeat: no-repeat;
-          background-position: center; 
-        ">
+    @if(!githubData){
+    <div role="alert" class="alert alert-error">
+      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span>Error! Retrieving data from GitHub!</span>
+    </div>
+
+    }@else {
+
+    <div class="bg-gray-600 bg-blend-multiply border-2 rounded-lg bg-no-repeat bg-center"
+      style="background-image: url({{githubData?.owner.avatar_url}}); ">
       <div class="hero-overlay bg-opacity-40"></div>
       <div class="hero-content text-center text-neutral-content">
         <div class="max-w-md">
@@ -77,8 +88,8 @@
 
     <div class="mockup-code mt-6">
       <pre class="p-4">
-        <markdown [src]="readMeData"></markdown>
-      </pre>
+          <markdown [src]="readMeData"></markdown>
+        </pre>
     </div>
 
     <div role="alert" class="alert shadow-lg mt-6 mb-6 flex text-center">
@@ -198,6 +209,8 @@
       <img class="rounded-lg" [defaultImage]="defaultImage" [lazyLoad]="buildStarHistory(githubData?.full_name)"
         alt="lebanon-stars-{{githubData?.full_name}}">
     </div>
+    }
+
     }
 
     <div class="modal-action">
