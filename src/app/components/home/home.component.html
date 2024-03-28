@@ -13,9 +13,7 @@
     </form>
   </div>
 
-  <!-- <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-4 sm:grid-cols-2 z-50"> -->
-
-  <div class="grid gap-6 auto-rows-fr grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 z-50">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-4 sm:grid-cols-2 z-50">
     @for(project of projects | filter:searchText | paginate: { itemsPerPage: 8, currentPage: pageNumber }; track
     project.id){
 
@@ -29,8 +27,6 @@
     }
 
   </div>
-
-
 
   @if(projects.length > 0){
   <div class="grid grid-cols-2">
