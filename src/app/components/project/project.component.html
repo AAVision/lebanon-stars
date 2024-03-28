@@ -1,4 +1,4 @@
-<div class="h-full max-w-sm border border-solid border-[#9a9a9a] bg-slate-50	rounded-lg object-cover shadow-xl z-50">
+<div class="h-full max-w-sm border border-solid border-[#9a9a9a] bg-slate-50 rounded-lg object-cover shadow-xl z-50">
   <figure class="px-6 pt-6">
     <div class="text-center flex items-center justify-center">
       <img [defaultImage]="defaultImage" [lazyLoad]="createImageUrl(metadata.url)"
@@ -13,13 +13,13 @@
       <button class="btn btn-neutral" (click)="shareInfo(metadata.name, metadata.url)">Check</button>
     </div> -->
 
+
     <div class="pt-2">
       <button type="button" (click)="shareInfo(metadata.name, metadata.url)"
         class="mt-auto py-2 px-4 bg-gray-800 hover:bg-gray-700 focus:ring-gray-100 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg ">
         View
       </button>
     </div>
-
 
   </div>
 
