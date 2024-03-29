@@ -21,7 +21,7 @@
 
     }@empty {
     <div class="flex items-center justify-center">
-      <img src="../../../assets/images/no-data.webp" alt=""
+      <img [defaultImage]="defaultImage" [lazyLoad]="'assets/images/no-data.webp'" alt=""
         class="text-center rounded-xl transform-gpu hover:scale-y-105 transition duration-500 ">
     </div>
     }
@@ -71,8 +71,10 @@
         <div class="max-w-md">
           <h1 class="mb-5 text-5xl font-bold">{{githubData?.name}}</h1>
           <p class="mb-5">{{githubData?.description}}</p>
-          @for(topic of githubData?.topics; track topic){
-          <div class="badge badge-secondary pr-2 mr-2">{{topic}}</div>
+          @if(githubData?.topics){
+            @for(topic of githubData?.topics; track topic){
+            <div class="badge badge-secondary pr-2 mr-2">{{topic}}</div>
+            }
           }
           <div class="pt-6">
             <button class="btn">

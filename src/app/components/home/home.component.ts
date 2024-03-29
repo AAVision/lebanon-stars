@@ -42,7 +42,7 @@ export class HomeComponent {
   readMeData: string
   searchForm: FormGroup
   searchText = ""
-  defaultImage: string = "../../../assets/images/loader.gif"
+  defaultImage: string = "./assets/images/loader.gif"
   pageNumber: number = 1
   languageData: RepoLanguage[] = []
 

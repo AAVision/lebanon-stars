@@ -33,6 +33,7 @@
     "@angular/compiler-cli": "^17.1.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/jasmine": "~5.1.0",
+    "angular-cli-ghpages": "^2.0.0-beta.2",
     "daisyui": "^4.7.3",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",

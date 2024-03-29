@@ -12,5 +12,5 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 })
 export class FooterComponent {
   anio: number = new Date().getFullYear();
-  defaultImage: string = "../../../../assets/images/loader.gif"
+  defaultImage: string = "./assets/images/loader.gif"
 }
