@@ -11,5 +11,5 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
   styleUrl: './aboutus.component.scss'
 })
 export class AboutusComponent {
-  defaultImage: string = "../../../assets/images/loader.gif"
+  defaultImage: string = "./assets/images/loader.gif"
 }

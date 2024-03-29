@@ -16,7 +16,7 @@ export class ProjectComponent {
   @Input('metadata') metadata: Project;
   @Output('info') info = new EventEmitter<ShareInfo>();
   constructor(private sanitizer: DomSanitizer) { }
-  defaultImage: string = '../../../assets/images/loader.gif'
+  defaultImage: string = './assets/images/loader.gif'
 
   shareInfo(name: string, url: string) {
     this.info.emit(

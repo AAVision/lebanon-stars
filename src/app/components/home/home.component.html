@@ -21,7 +21,7 @@
 
     }@empty {
     <div class="flex items-center justify-center">
-      <img src="../../../assets/images/no-data.webp" alt=""
+      <img [defaultImage]="defaultImage" [lazyLoad]="'assets/images/no-data.webp'" alt=""
         class="text-center rounded-xl transform-gpu hover:scale-y-105 transition duration-500 ">
     </div>
     }

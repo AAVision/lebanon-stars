@@ -17,7 +17,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 export class ContributorsComponent {
   contributors: GitHubContributor[] = []
   lebanonStar: string = "AAVision/beSideYou"
-  defaultImage: string = "../../../assets/images/loader.gif"
+  defaultImage: string = "./assets/images/loader.gif"
 
   constructor(private _githubService: GithubService) {
     this._githubService.getGitHubContributors(this.lebanonStar).pipe(
