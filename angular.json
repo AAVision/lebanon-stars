@@ -94,6 +94,15 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/lebanon-stars/",
+            "repo": "https://github.com/AAVision/lebanon-stars",
+            "name": "Lebanon Stars",
+            "email": "75311052+AAVision@users.noreply.github.com"
+          }
         }
       }
     }
