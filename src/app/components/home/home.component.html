@@ -72,9 +72,9 @@
           <h1 class="mb-5 text-5xl font-bold">{{githubData?.name}}</h1>
           <p class="mb-5">{{githubData?.description}}</p>
           @if(githubData?.topics){
-            @for(topic of githubData?.topics; track topic){
-            <div class="badge badge-secondary pr-2 mr-2">{{topic}}</div>
-            }
+          @for(topic of githubData?.topics; track topic){
+          <div class="badge badge-secondary pr-2 mr-2">{{topic}}</div>
+          }
           }
           <div class="pt-6">
             <button class="btn">
@@ -96,16 +96,11 @@
 
     <div role="alert" class="alert shadow-lg mt-6 mb-6 flex text-center">
       <div class="stats stats-vertical lg:stats-horizontal shadow w-full">
-
         @for(data of languageData; track data.key; let idx = $index){
-        @if(idx >= 4){
-        <!-- To be added later -->
-        }@else {
         <div class="stat">
           <div class="stat-title">{{data.key}}</div>
           <div class="stat-value">{{(data.value / languageFilesCount) | percent}}</div>
         </div>
-        }
         }
       </div>
     </div>
@@ -177,6 +172,7 @@
             <div class="timeline-end timeline-box">{{githubData?.forks_count}}</div>
             <hr>
           </li>
+          @if(githubData?.license){
           <li>
             <hr />
             <div class="timeline-start">License</div>
@@ -190,22 +186,23 @@
             <div class="timeline-end timeline-box">{{githubData?.license.name}}</div>
             <hr>
           </li>
-          @if(githubData?.homepage){
-            <li>
-              <hr />
-              <div class="timeline-start">Home Page</div>
-              <div class="timeline-middle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                  <path fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-              <div class="timeline-end timeline-box"><a [href]="githubData?.homepage" target="_blank"
-                  class="link">{{githubData?.homepage}}</a></div>
-            </li>
           }
-          
+          @if(githubData?.homepage){
+          <li>
+            <hr />
+            <div class="timeline-start">Home Page</div>
+            <div class="timeline-middle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="timeline-end timeline-box"><a [href]="githubData?.homepage" target="_blank"
+                class="link">{{githubData?.homepage}}</a></div>
+          </li>
+          }
+
         </ul>
       </div>
     </div>

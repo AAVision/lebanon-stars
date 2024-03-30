@@ -116,10 +116,7 @@ export class HomeComponent {
       takeUntilDestroyed(this.destroyRef),
       map((data: any) => {
         if (data) {
-          this.languageData = Object.keys(data).map(key => ({ key, value: data[key] }));
-          Object.values(this.languageData).forEach(val => {
-            this.languageFilesCount += val.value
-          })
+          this.languageData = this.processLanguageData(data)
         }
       }),
       catchError((_) => {
@@ -129,6 +126,19 @@ export class HomeComponent {
         this.isLoading = false
       })
     ).subscribe()
+  }
+
+  processLanguageData(data: RepoLanguage[]): RepoLanguage[] {
+    let langData = Object.keys(data).map(key => ({ key, value: data[key] }));
+    Object.values(langData).forEach(val => {
+      this.languageFilesCount += val.value
+    })
+    let langDataLength = langData.length
+    if (langDataLength > 4) {
+      const otherValue = data.slice(-4).reduce((acc, cur) => acc + cur.value, 0);
+      langData = [...data.slice(0, 4), { "key": "Others", "value": otherValue }];
+    }
+    return langData
   }
 
   createSlug(url: string): string {
@@ -168,8 +178,8 @@ export class HomeComponent {
     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
   }
 
-  shuffleArray(array: Project[]): Project[]{
-    return array.sort(()=> Math.random() - 0.5)
+  shuffleArray(array: Project[]): Project[] {
+    return array.sort(() => Math.random() - 0.5)
   }
 
 }
