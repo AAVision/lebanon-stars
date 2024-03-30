@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/shared/header/header.component';
@@ -15,5 +15,11 @@ import { FooterComponent } from './components/shared/footer/footer.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  constructor(private _elementRef: ElementRef) { }
   title = 'leabnon-stars';
+
+  ngOnInit(): void {
+    this._elementRef.nativeElement.removeAttribute("ng-version");
+  }
+
 }

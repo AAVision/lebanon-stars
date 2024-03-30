@@ -7,9 +7,9 @@
 </p>
 
 ## Used Technologies
-- Angular 17
-- Tailwind 3.4.1
-- DaisyUI 4.7.3
+- Angular 17.3.2
+- Tailwind 3.4.3
+- DaisyUI 4.9.0
 
 ## Development server :rocket:
 
