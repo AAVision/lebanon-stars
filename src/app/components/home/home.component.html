@@ -1,4 +1,4 @@
-<div class="bgg">
+<div class="bgg bg-no-repeat bg-right-bottom">
 
   <div class="pb-6 flex md:flex md:flex-grow flex-row justify-between">
     <form [formGroup]="searchForm" class="w-full md:w-2/12">
@@ -14,7 +14,7 @@
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-4 sm:grid-cols-2 z-50">
-    @for(project of projects | filter:searchText | paginate: { itemsPerPage: 8, currentPage: pageNumber }; track
+    @for(project of projects | filter:searchText | paginate: { itemsPerPage: 16, currentPage: pageNumber }; track
     project.id){
 
     <app-project [metadata]="project" (info)="receiveInfo($event)"></app-project>
@@ -184,10 +184,10 @@
               </svg>
             </div>
             <div class="timeline-end timeline-box">{{githubData?.license.name}}</div>
-            <hr>
+            <!-- <hr> -->
           </li>
           }
-          @if(githubData?.homepage){
+          <!-- @if(githubData?.homepage){
           <li>
             <hr />
             <div class="timeline-start">Home Page</div>
@@ -201,7 +201,7 @@
             <div class="timeline-end timeline-box"><a [href]="githubData?.homepage" target="_blank"
                 class="link">{{githubData?.homepage}}</a></div>
           </li>
-          }
+          } -->
 
         </ul>
       </div>
