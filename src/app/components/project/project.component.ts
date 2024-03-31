@@ -2,12 +2,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project, ShareInfo } from '../../models/project';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-project',
   standalone: true,
   imports: [
-    LazyLoadImageModule
+    LazyLoadImageModule, CommonModule
   ],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'

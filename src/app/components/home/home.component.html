@@ -1,4 +1,4 @@
-<div class="bgg">
+<div class="bgg bg-no-repeat bg-right-bottom">
 
   <div class="pb-6 flex md:flex md:flex-grow flex-row justify-between">
     <form [formGroup]="searchForm" class="w-full md:w-2/12">
@@ -184,10 +184,10 @@
               </svg>
             </div>
             <div class="timeline-end timeline-box">{{githubData?.license.name}}</div>
-            <hr>
+            <!-- <hr> -->
           </li>
           }
-          @if(githubData?.homepage){
+          <!-- @if(githubData?.homepage){
           <li>
             <hr />
             <div class="timeline-start">Home Page</div>
@@ -201,7 +201,7 @@
             <div class="timeline-end timeline-box"><a [href]="githubData?.homepage" target="_blank"
                 class="link">{{githubData?.homepage}}</a></div>
           </li>
-          }
+          } -->
 
         </ul>
       </div>
