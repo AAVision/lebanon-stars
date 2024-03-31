@@ -6,7 +6,7 @@
   <img src="https://github.com/AAVision/lebanon-stars/blob/37063f85b391caeb19cf102b943da84cb5518a85/src/assets/images/lebanon.svg" />
 </p>
 
-## Used Technologies
+## Used Technologies :hammer_and_wrench:
 - Angular 17.3.2
 - Tailwind 3.4.3
 - DaisyUI 4.9.0
