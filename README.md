@@ -2,9 +2,12 @@
 
 **We're successful developers and software engineers from Lebanon who invented a bunch of success repositories in a place filled with obstacles and economic crises!**
 
+**LIVE DEMO:** https://lebanon-stars.netlify.app/
+
 <p align="center">
   <img src="https://github.com/AAVision/lebanon-stars/blob/37063f85b391caeb19cf102b943da84cb5518a85/src/assets/images/lebanon.svg" />
 </p>
+
 
 ## Used Technologies :hammer_and_wrench:
 - Angular 17.3.2
