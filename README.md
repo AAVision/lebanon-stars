@@ -45,7 +45,7 @@ You can head to `localhost:4201` to access the application.
 [
     {
         "id": "1",
-        "name": "Beside You",
+        "name": "Beside You", // without any symbols
         "description": "❤️ We can motivate!",
         "url": "https://github.com/AAVision/beSideYou"
     },
