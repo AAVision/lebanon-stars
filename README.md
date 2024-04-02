@@ -1,4 +1,4 @@
-# Leabnon Stars :star:
+# Lebanon Stars :star:
 
 **We're successful developers and software engineers from Lebanon who invented a bunch of success repositories in a place filled with obstacles and economic crises!**
 
