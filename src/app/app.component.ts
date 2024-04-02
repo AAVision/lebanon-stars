@@ -16,7 +16,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 })
 export class AppComponent {
   constructor(private _elementRef: ElementRef) { }
-  title = 'leabnon-stars';
+  title = 'lebanon-stars';
 
   ngOnInit(): void {
     this._elementRef.nativeElement.removeAttribute("ng-version");

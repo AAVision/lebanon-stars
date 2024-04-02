@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "leabnon-stars": {
+    "lebanon-stars": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/leabnon-stars",
+            "outputPath": "dist/lebanon-stars",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "leabnon-stars:build:production"
+              "buildTarget": "lebanon-stars:build:production"
             },
             "development": {
-              "buildTarget": "leabnon-stars:build:development"
+              "buildTarget": "lebanon-stars:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "leabnon-stars:build"
+            "buildTarget": "lebanon-stars:build"
           }
         },
         "test": {
