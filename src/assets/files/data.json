@@ -25,7 +25,7 @@
     },
     {
         "id": 5,
-        "name": "rapid-express",
+        "name": "rapid express",
         "description": "A CLI tool that automates the creation of an express app with basic configrations, middleware , global error handler, and automatic connection to mongodb",
         "url": "https://github.com/Mohammad-y-abbass/rapid-express"
     }
