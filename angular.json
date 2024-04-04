@@ -30,6 +30,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-sharebuttons/themes/circles.scss",
+              "node_modules/ngx-sharebuttons/themes/modern.scss",
               "src/styles.scss"
             ],
             "scripts": []
