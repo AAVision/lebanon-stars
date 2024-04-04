@@ -4,7 +4,7 @@ import { Project, RepoLanguage, ShareInfo } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { catchError, debounceTime, finalize, map, of } from 'rxjs';
-import { GitHubReadMe, GitHubResponse } from '../../models/github';
+import { GitHubResponse } from '../../models/github';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MarkdownModule } from 'ngx-markdown';
 import { CommonModule } from '@angular/common';

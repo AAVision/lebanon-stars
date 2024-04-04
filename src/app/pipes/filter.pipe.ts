@@ -9,7 +9,11 @@ export class FilterPipe implements PipeTransform {
 
   transform(projects: Project[], searchText: string): Project[] {
     if (!projects) return []
-    return projects.filter(project => project.name.toLocaleLowerCase().indexOf(searchText.toLowerCase()) != -1);
+    return projects.filter(
+      project => (
+        project.name.toLocaleLowerCase().indexOf(searchText.toLocaleLowerCase()) != -1 || project.description.toLocaleLowerCase().indexOf(searchText.toLocaleLowerCase()) != -1
+      )
+    )
   }
 
 }
