@@ -1,14 +1,16 @@
 <div class="navbar bg-base-100">
   <div class="navbar-start">
     <div class="dropdown">
-      <div tabindex="0" role="button" name="responsive-btn" aria-label="responsive-btn" id="responsive-btn" class="btn btn-ghost lg:hidden">
+      <div tabindex="0" role="button" name="responsive-btn" aria-label="responsive-btn" id="responsive-btn"
+        class="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
         </svg>
       </div>
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <li>
-          <a routerLink="/" id="projects-main" [routerLinkActive]="'font-bold'" [routerLinkActiveOptions]="{ exact: true }">Projects</a>
+          <a routerLink="/" id="projects-main" [routerLinkActive]="'font-bold'"
+            [routerLinkActiveOptions]="{ exact: true }">Projects</a>
         </li>
         <li>
           <a routerLink="contributors" id="contributor-main" [routerLinkActive]="'font-bold'">Contributors</a>
@@ -21,12 +23,36 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a routerLink="" id="projects-secondary" [routerLinkActive]="'font-bold'" [routerLinkActiveOptions]="{ exact: true }">Projects</a></li>
+      <li><a routerLink="" id="projects-secondary" [routerLinkActive]="'font-bold'"
+          [routerLinkActiveOptions]="{ exact: true }">Projects</a></li>
       <li><a routerLink="contributors" id="contributor-secondary" [routerLinkActive]="'font-bold'">Contributors</a></li>
       <li><a routerLink="about-us" id="about-us-secondary" [routerLinkActive]="'font-bold'">About us</a></li>
     </ul>
   </div>
   <div class="navbar-end">
+
+    <button class="btn bg-transparent border-0" onclick="share_button_modal.showModal()">
+      <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.926 10.898 15 7.727m-7.074 5.39L15 16.29M8 12a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm12 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm0-11a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"/>
+      </svg>      
+    </button>
+    <dialog id="share_button_modal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-lg">Share IT!</h3>
+        <div class="py-4">
+          <share-buttons theme="modern-dark" [showIcon]="true" [showText]="true"
+            description="We're successful developers and software engineers from Lebanon who invented a bunch of success repositories in a place filled with obstacles and economic crises!
+Lebanon Stars is a simple project created by Ali Alachkar and with the help of contributors using Angular 17, Tailwind, and DaisyUI. The main purpose of the project was to add all the Lebanese repos to be viewed by other developers, university students, or even recruiters!
+"></share-buttons>
+        </div>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
     <a class="btn bg-transparent border-0" name="github-link" aria-label="github-link" id="github-link"
       href="https://www.github.com/aavision/lebanon-stars" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
