@@ -50,3 +50,12 @@ body {
 .ngx-pagination .current {
   background: #000 !important;
 }
+
+@font-face {
+  font-family: "Mustardo";
+  src: url("assets/fonts/mustardo.ttf");
+}
+
+.mustardo {
+  font-family: "Mustardo";
+}
