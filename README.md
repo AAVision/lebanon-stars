@@ -9,7 +9,7 @@
 </p>
 
 
-## Used Tenologies :hammer_and_wrench:
+## Used Technologies :hammer_and_wrench:
 - Angular 18.0.4 
 - Tailwind 3.4.4
 - DaisyUI 4.12.2
