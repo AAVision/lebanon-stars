@@ -4,6 +4,8 @@ import { provideRouter, withHashLocation, withViewTransitions } from '@angular/r
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
+import { provideShareButtonsOptions } from 'ngx-sharebuttons';
+import { shareIcons } from 'ngx-sharebuttons/icons';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,6 +13,9 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     importProvidersFrom(
       MarkdownModule.forRoot()
+    ),
+    provideShareButtonsOptions(
+      shareIcons()
     )
   ]
 };
