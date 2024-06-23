@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
-import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { ShareButtons } from 'ngx-sharebuttons/buttons';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    RouterModule, ShareButtonsModule, ShareIconsModule
+    RouterModule, ShareButtons
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
