@@ -10,9 +10,9 @@
 
 
 ## Used Technologies :hammer_and_wrench:
-- Angular 17.3.2
-- Tailwind 3.4.3
-- DaisyUI 4.9.0
+- Angular 18.0.4 
+- Tailwind 3.4.4
+- DaisyUI 4.12.2
 
 ## Development server :rocket:
 
